@@ -1,6 +1,6 @@
 const profiles = [
-  { name:"Аня", age:23, img:"assets/images/profiles/anna.png", bio:"Люблю кофе ?" },
-  { name:"Катя", age:25, img:"assets/images/profiles/kate.png", bio:"Спорт и путешествия" }
+  { name:"РћР»РµРі", age:23, img:"assets/images/profiles/oleg.png", bio:"Р›СЋР±Р»СЋ РєРѕС„Рµ :3" },
+  { name:"Р•РІРїР°С‚РёР№", age:25, img:"assets/images/profiles/evpatij.png", bio:"РќРµРЅР°РІРёР¶Сѓ РіСЂСЏР·РЅС‹Р№ СЃРїРѕСЂС‚" }
 ];
 
 let index = 0;

@@ -2,7 +2,7 @@ let currentChat = null;
 const chatWindow = document.getElementById('chatWindow');
 const chatHeader = document.getElementById('chatHeader');
 
-const names = ['���','����'];
+const names = ['Анатолий','Генадий'];
 const chats = [[], []];
 
 function openChat(i) {

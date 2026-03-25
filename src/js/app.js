@@ -20,7 +20,6 @@ tabChat.onclick = () => {
   chatListView.classList.add('active');
 };
 
-// profile edit
 const editBtn = document.getElementById('editBtn');
 const saveBtn = document.getElementById('saveBtn');
 const inputs = [userName, birth, bio];
@@ -42,6 +41,7 @@ saveBtn.onclick = () => {
 
 // gender toggle
 const toggleOptions = document.querySelectorAll('.toggle-option');
+
 toggleOptions.forEach(opt => {
   opt.onclick = () => {
     if (!editing) return;
