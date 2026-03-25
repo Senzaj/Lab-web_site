@@ -4,7 +4,6 @@ const swipeView = document.getElementById('swipeView');
 const chatListView = document.getElementById('chatListView');
 const chatPanel = document.getElementById('chatPanel');
 
-// tabs
 tabSwipe.onclick = () => {
   tabSwipe.classList.add('active');
   tabChat.classList.remove('active');
@@ -39,7 +38,6 @@ saveBtn.onclick = () => {
   editBtn.style.display = 'block';
 };
 
-// gender toggle
 const toggleOptions = document.querySelectorAll('.toggle-option');
 
 toggleOptions.forEach(opt => {

@@ -8,60 +8,66 @@ const stack = document.getElementById('stack');
 
 function renderCards() {
   stack.innerHTML = '';
-  for (let i=index;i<index+2;i++) {
-    if(!profiles[i]) continue;
-    const p = profiles[i];
 
-    const c = document.createElement('div');
-    c.className='card';
+  for (let i = index; i < index + 2; i++) {
+    if (!profiles[i])
+      continue;
 
-    c.innerHTML=`
+    const profile = profiles[i];
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
       <div class="card-actions">
-        <button onclick="handleAction(-1)">?</button>
-        <button onclick="handleAction(1)">??</button>
+        <button onclick="handleAction(-1)">❌</button>
+        <button onclick="handleAction(1)">❤️</button>
       </div>
-      <img src="${p.img}">
-      <h2>${p.name}, ${p.age}</h2>
-      <p>${p.bio}</p>
-    `;
+      <img src="${profile.img}">
+      <h2>${profile.name}, ${profile.age}</h2>
+      <p>${profile.bio}</p>
+`;
 
-    stack.appendChild(c);
+    stack.appendChild(card);
   }
 
   initDrag();
 }
 
-function handleAction(dir){
+function handleAction(dir) {
   index++;
   renderCards();
 }
 
 let startX=0, currentX=0, dragging=false;
 
-function initDrag(){
-  const card=document.querySelector('.card');
-  if(!card) return;
+function initDrag() {
+  const card = document.querySelector('.card');
+  if (!card)
+    return;
 
-  card.onpointerdown=e=>{
-    dragging=true;
-    startX=e.clientX;
-    card.setPointerCapture(e.pointerId);
+  card.onpointerdown = event => {
+    dragging = true;
+    startX = event.clientX;
+    card.setPointerCapture(event.pointerId);
   };
 
-  card.onpointermove=e=>{
-    if(!dragging) return;
-    currentX=e.clientX-startX;
-    card.style.transform=`translateX(${currentX}px) rotate(${currentX*0.05}deg)`;
+  card.onpointermove = event => {
+    if (!dragging)
+      return;
+    currentX = event.clientX - startX;
+    card.style.transform = `translateX(${currentX}px) rotate(${currentX * 0.05}deg)`;
   };
 
-  card.onpointerup=()=>{
-    dragging=false;
+  card.onpointerup = () => {
+    dragging = false;
 
-    if(currentX>120) handleAction(1);
-    else if(currentX<-120) handleAction(-1);
-    else card.style.transform='';
+    if (currentX > 120)
+      handleAction(1);
+    else if (currentX < -120)
+      handleAction(-1);
+    else
+      card.style.transform = '';
 
-    currentX=0;
+    currentX = 0;
   };
 }
 

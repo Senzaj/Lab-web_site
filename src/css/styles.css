@@ -18,7 +18,6 @@ body { margin:0; font-family:sans-serif; background:#f6f7fb; }
     justify-content:space-between;
     align-items:center;
 }
-
 .profile-actions button {
     border:none;
     background:#eee;
@@ -26,21 +25,43 @@ body { margin:0; font-family:sans-serif; background:#f6f7fb; }
     padding:6px 10px;
 }
 
-.main { flex:1; display:flex; flex-direction:column; align-items:center; }
-
-.tabs { display:flex; gap:10px; margin:10px; }
+.main {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.tabs {
+    display:flex;
+    gap:10px;
+    margin:10px;
+}
 .tabs button {
     padding:10px 16px;
     border:none;
     border-radius:12px;
     background:#eee;
 }
-.tabs button.active { background:#ff4d79; color:white; }
+.tabs button.active {
+    background:#ff4d79;
+    color:white;
+}
 
-.view { display:none; width:100%; justify-content:center; flex-direction:column; align-items:center; }
-.view.active { display:flex; }
-
-.card-stack { position:relative; width:300px; height:420px; }
+.view {
+    display:none;
+    width:100%;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+}
+.view.active {
+    display:flex;
+}
+.card-stack {
+    position:relative;
+    width:300px;
+    height:420px;
+}
 
 .card {
     position:absolute;
@@ -62,9 +83,9 @@ body { margin:0; font-family:sans-serif; background:#f6f7fb; }
 
 .card-actions {
     position:absolute;
-    top:10px;
     left:10px;
     right:10px;
+    bottom:10px;
     display:flex;
     justify-content:space-between;
 }
@@ -72,8 +93,8 @@ body { margin:0; font-family:sans-serif; background:#f6f7fb; }
 .card-actions button {
     border:none;
     border-radius:50%;
-    width:40px;
-    height:40px;
+    width:48px;
+    height:48px;
 }
 
 .toggle {
@@ -108,7 +129,10 @@ body { margin:0; font-family:sans-serif; background:#f6f7fb; }
     margin:5px;
 }
 
-#chatPanel { display:none; flex-direction:column; }
+#chatPanel {
+    display:none;
+    flex-direction:column;
+}
 
 .chat-header {
     font-weight:bold;
