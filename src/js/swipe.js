@@ -1,10 +1,5 @@
-const profiles = [
-  { name: "Олег", sex: "♂️", age: "23 года", img: "assets/images/profiles/oleg.png", bio: "Люблю кофе :3" },
-  { name: "Евпатий", sex: "♂️", age: "25 лет", img: "assets/images/profiles/evpatij.png", bio: "Ненавижу грязный спорт" }
-];
-
-let currentIndex = 0;
 const stack = document.getElementById('stack');
+let currentIndex = 0;
 
 function renderCard() {
   stack.innerHTML = '';
@@ -20,12 +15,13 @@ function renderCard() {
   card.innerHTML = `
     <img src="${profile.img}" alt="${profile.name}">
     <h2>${profile.name}, ${profile.age} ${profile.sex}</h2>
-    <p>${profile.bio}</p>
-  `;
+    <p>${profile.bio}</p>`;
   stack.appendChild(card);
+  moveCard(card)
+}
 
+function moveCard(card){
   let startX = 0, currentX = 0, dragging = false;
-
   card.style.transition = 'none';
 
   card.onpointerdown = (event) => {
@@ -58,9 +54,9 @@ function renderCard() {
     const threshold = 120;
 
     if (currentX > threshold) {
-      handleAction(1);
+      handleAction(true);
     } else if (currentX < -threshold) {
-      handleAction(-1);
+      handleAction(false);
     } else {
       card.style.transition = 'transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease';
       card.style.transform = '';
@@ -93,10 +89,27 @@ function resetColorEffect(card) {
   card.style.border = '';
 }
 
-function handleAction(direction) {
-  console.log(direction === 1 ? '❤️ Лайк' : '❌ Дизлайк', profiles[currentIndex].name);
+function handleAction(cardState) {
+  if (cardState === true) {
+    addLikedProfile(profiles[currentIndex]);
+  }
+
   currentIndex++;
   renderCard();
+}
+
+function  addLikedProfile(profile) {
+  if (AppState.likedProfiles.some(p => p.name === profile.name))
+    return;
+
+  AppState.likedProfiles.push(profile);
+  AppState.chats[profile.name] = [];
+
+  updateChatListView()
+
+  if (Math.random() < 0.5){
+    addIncomingMessage(profile.name, '🤝');
+  }
 }
 
 renderCard();

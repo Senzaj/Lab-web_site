@@ -25,14 +25,14 @@
             <div class="toggle-option" data-value="F">Ж</div>
         </div>
 
-        <input id="birth" type="date" disabled>
-        <textarea id="bio" placeholder="Описание" disabled></textarea>
+        <input id="birth" type="date"  disabled>
+        <textarea id="bio" placeholder="Описание" disabled ></textarea>
     </aside>
 
     <main class="main">
 
         <div class="tabs">
-            <button id="tabSwipe" class="active">Свайпы</button>
+            <button id="tabSwipe" class="active">Анкеты</button>
             <button id="tabChat">Диалоги</button>
         </div>
 
@@ -41,10 +41,7 @@
         </div>
 
         <div id="chatListView" class="view">
-            <div class="chat-list">
-                <div class="chat-item" onclick="openChat(0)">Анатолий</div>
-                <div class="chat-item" onclick="openChat(1)">Генадий</div>
-            </div>
+            <div class="chat-list"></div>
         </div>
 
     </main>
@@ -59,8 +56,10 @@
     </aside>
 
 </div>
-<script src="js/swipe.js"></script>
-<script src="js/chat.js"></script>
 <script src="js/app.js"></script>
+<script src="js/Constants/profilesList.js"></script>
+<script src="js/userProfile.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/swipe.js"></script>
 </body>
 </html>

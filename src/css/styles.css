@@ -6,19 +6,11 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'TT Days Sans Italic';
-    src: url('../assets/fonts/TTDaysSans-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
-
 body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font-style: normal; background:#f6f7fb; }
-.app { display:flex; height:100vh; }
+.app { display:flex; min-width: 100vh; height:100vh; }
 
 .sidebar {
-    width:240px;
+    width:320px;
     padding:16px;
     background:white;
     border-radius:24px;
@@ -147,6 +139,7 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
 }
 
 #chatPanel {
+    min-width: 100px;
     display:none;
     flex-direction:column;
 }
@@ -154,6 +147,12 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
 .chat-header {
     font-weight:bold;
     margin-bottom:10px;
+}
+
+.chat-empty {
+    text-align: center;
+    color: #999;
+    padding: 20px;
 }
 
 #chatWindow {
@@ -170,13 +169,16 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
     max-width:70%;
     word-break:break-word;
 }
-
 .me { background:#ff4d79; color:white; align-self:flex-end; }
 .other { background:#eee; align-self:flex-start; }
 
 .chat-input {
     display:flex;
-    gap:6px;
+    gap:10px;
+}
+
+#messageInput {
+    width:100%;
 }
 
 #sendBtn {
@@ -195,4 +197,10 @@ input, textarea, button {
     border: none;
     background:#f0f0f5;
     padding:8px;
+}
+
+textarea {
+    resize: vertical;
+    min-height:8vh;
+    max-width: 100%;
 }
