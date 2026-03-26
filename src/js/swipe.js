@@ -1,5 +1,6 @@
 const stack = document.getElementById('stack');
 let currentIndex = 0;
+let isAnimating = false;
 
 function renderCard() {
   stack.innerHTML = '';
@@ -25,6 +26,7 @@ function moveCard(card){
   card.style.transition = 'none';
 
   card.onpointerdown = (event) => {
+    if (isAnimating) return;
     dragging = true;
     startX = event.clientX;
     card.setPointerCapture(event.pointerId);
@@ -33,7 +35,7 @@ function moveCard(card){
   };
 
   card.onpointermove = (event) => {
-    if (!dragging) return;
+    if (!dragging || isAnimating) return;
     currentX = event.clientX - startX;
     const rotate = currentX * 0.1;
     const opacity = Math.min(1, Math.abs(currentX) / 200);
@@ -50,14 +52,16 @@ function moveCard(card){
   };
 
   card.onpointerup = () => {
+    if (!dragging || isAnimating) return;
     dragging = false;
     const threshold = 120;
 
     if (currentX > threshold) {
-      handleAction(true);
+      exitCard(card, 'right');
     } else if (currentX < -threshold) {
-      handleAction(false);
+      exitCard(card, 'left');
     } else {
+      // возврат на место
       card.style.transition = 'transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease';
       card.style.transform = '';
       card.style.opacity = '';
@@ -68,6 +72,24 @@ function moveCard(card){
     }
     currentX = 0;
   };
+}
+
+function exitCard(card, direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const isLike = direction === 'right';
+  const translateX = isLike ? 500 : -500;
+  const rotate = isLike ? 30 : -30;
+
+  card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+  card.style.transform = `translateX(${translateX}px) rotate(${rotate}deg)`;
+  card.style.opacity = '0';
+
+  setTimeout(() => {
+    handleAction(isLike);
+    isAnimating = false;
+  }, 300);
 }
 
 function applyLikeEffect(card, offset) {
