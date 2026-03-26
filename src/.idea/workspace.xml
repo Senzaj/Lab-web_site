@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21af8edd-888b-4acc-aca1-0814b4a721b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/Constants/profilesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/userProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/swipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Constants/profilesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/profilesList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "master",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "F:/Repositoreis/Lab-web_site/src/js/Constants",
+    "last_opened_file_path": "F:/Repositoreis/Lab-web_site/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,6 +58,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Repositoreis\Lab-web_site\src" />
+      <recent name="F:\Repositoreis\Lab-web_site\src\js" />
       <recent name="F:\Repositoreis\Lab-web_site\src\js\Constants" />
     </key>
   </component>
@@ -87,7 +84,7 @@
       <updated>1774435418233</updated>
       <workItem from="1774435419301" duration="7489000" />
       <workItem from="1774498969414" duration="1044000" />
-      <workItem from="1774500346525" duration="20312000" />
+      <workItem from="1774500346525" duration="22065000" />
     </task>
     <servers />
   </component>
