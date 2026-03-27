@@ -9,7 +9,7 @@ function openChat(profile) {
   chatPanel.style.display = 'flex';
   chatHeader.innerHTML = `
         <head>${profile.name}</head>
-        <img src=" ${profile.img}" alt="${emptyProfileImage}">`;
+        <img src=" ${profile.img}" alt=${emptyProfileImage}>`;
   renderChatWindow(profile.name);
 }
 
