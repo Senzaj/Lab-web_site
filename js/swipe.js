@@ -1,10 +1,6 @@
-const profiles = [
-  { name: "Олег", sex: "♂️", age: "23 года", img: "assets/images/profiles/oleg.png", bio: "Люблю кофе :3" },
-  { name: "Евпатий", sex: "♂️", age: "25 лет", img: "assets/images/profiles/evpatij.png", bio: "Ненавижу грязный спорт" }
-];
-
-let currentIndex = 0;
 const stack = document.getElementById('stack');
+let currentIndex = 0;
+let isAnimating = false;
 
 function renderCard() {
   stack.innerHTML = '';
@@ -18,17 +14,19 @@ function renderCard() {
   const card = document.createElement('div');
   card.className = 'card';
   card.innerHTML = `
-    <img src="${profile.img}" alt="${profile.name}">
+    <img src="${profile.img}" alt="${emptyProfileImage}">
     <h2>${profile.name}, ${profile.age} ${profile.sex}</h2>
-    <p>${profile.bio}</p>
-  `;
+    <p>${profile.bio}</p>`;
   stack.appendChild(card);
+  moveCard(card)
+}
 
+function moveCard(card){
   let startX = 0, currentX = 0, dragging = false;
-
   card.style.transition = 'none';
 
   card.onpointerdown = (event) => {
+    if (isAnimating) return;
     dragging = true;
     startX = event.clientX;
     card.setPointerCapture(event.pointerId);
@@ -37,7 +35,7 @@ function renderCard() {
   };
 
   card.onpointermove = (event) => {
-    if (!dragging) return;
+    if (!dragging || isAnimating) return;
     currentX = event.clientX - startX;
     const rotate = currentX * 0.1;
     const opacity = Math.min(1, Math.abs(currentX) / 200);
@@ -54,14 +52,16 @@ function renderCard() {
   };
 
   card.onpointerup = () => {
+    if (!dragging || isAnimating) return;
     dragging = false;
     const threshold = 120;
 
     if (currentX > threshold) {
-      handleAction(1);
+      exitCard(card, 'right');
     } else if (currentX < -threshold) {
-      handleAction(-1);
+      exitCard(card, 'left');
     } else {
+      // возврат на место
       card.style.transition = 'transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease';
       card.style.transform = '';
       card.style.opacity = '';
@@ -72,6 +72,24 @@ function renderCard() {
     }
     currentX = 0;
   };
+}
+
+function exitCard(card, direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const isLike = direction === 'right';
+  const translateX = isLike ? 500 : -500;
+  const rotate = isLike ? 30 : -30;
+
+  card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+  card.style.transform = `translateX(${translateX}px) rotate(${rotate}deg)`;
+  card.style.opacity = '0';
+
+  setTimeout(() => {
+    handleAction(isLike);
+    isAnimating = false;
+  }, 300);
 }
 
 function applyLikeEffect(card, offset) {
@@ -93,10 +111,27 @@ function resetColorEffect(card) {
   card.style.border = '';
 }
 
-function handleAction(direction) {
-  console.log(direction === 1 ? '❤️ Лайк' : '❌ Дизлайк', profiles[currentIndex].name);
+function handleAction(cardState) {
+  if (cardState === true) {
+    addLikedProfile(profiles[currentIndex]);
+  }
+
   currentIndex++;
   renderCard();
+}
+
+function  addLikedProfile(profile) {
+  if (AppState.likedProfiles.some(p => p.name === profile.name))
+    return;
+
+  AppState.likedProfiles.push(profile);
+  AppState.chats[profile.name] = [];
+
+  updateChatListView()
+
+  if (Math.random() < 0.5){
+    addIncomingMessage(profile.name, '🤝');
+  }
 }
 
 renderCard();
