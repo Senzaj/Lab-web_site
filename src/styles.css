@@ -1,6 +1,6 @@
 ﻿@font-face {
     font-family: 'TT Days Sans';
-    src: url('../assets/fonts/TTDaysSans-Black.ttf') format('truetype');
+    src: url('assets/fonts/TTDaysSans-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
