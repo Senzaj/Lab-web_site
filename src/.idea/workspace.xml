@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="21af8edd-888b-4acc-aca1-0814b4a721b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/profiles/evpatij.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/profiles/oleg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/profiles/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/profilesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/profilesList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/swipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,28 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.edge debug.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Coverage",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.chat.js.executor": "Debug",
-    "Node.js.swipe.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "master",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "F:/Repositoreis/Lab-web_site/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.edge debug.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Coverage&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.chat.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.swipe.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Repositoreis/Lab-web_site/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Repositoreis\Lab-web_site\src" />
@@ -82,7 +88,8 @@
       <updated>1774435418233</updated>
       <workItem from="1774435419301" duration="7489000" />
       <workItem from="1774498969414" duration="1044000" />
-      <workItem from="1774500346525" duration="23203000" />
+      <workItem from="1774500346525" duration="23486000" />
+      <workItem from="1774589940471" duration="5382000" />
     </task>
     <servers />
   </component>

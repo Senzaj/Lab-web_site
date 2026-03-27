@@ -6,7 +6,7 @@
     font-display: swap;
 }
 
-body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font-style: normal; background:#f6f7fb; }
+body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font-style: normal; background:#f6f7fb; user-select: none;  }
 .app { display:flex; min-width: 100vh; height:100vh; }
 
 .sidebar {
@@ -131,11 +131,20 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
 }
 
 .chat-item {
-    padding:12px;
-    border-radius:12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 8px 8px 16px;
+    border-radius:16px;
     background:#f0f0f5;
-    margin-top:16px;
-    margin-bottom:16px;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+.chat-item img {
+    width:42px;
+    height:42px;
+    border-radius:32px;
+    margin-left: auto;
 }
 
 #chatPanel {
@@ -145,8 +154,17 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
 }
 
 .chat-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight:bold;
     margin-bottom:10px;
+}
+.chat-header img {
+    width:42px;
+    height:42px;
+    border-radius:32px;
+    margin-left: auto;
 }
 
 .chat-empty {
@@ -203,4 +221,9 @@ textarea {
     resize: vertical;
     min-height:8vh;
     max-width: 100%;
+}
+
+img {
+    -webkit-user-select: none;
+    pointer-events: none;
 }

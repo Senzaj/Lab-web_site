@@ -14,7 +14,7 @@ function renderCard() {
   const card = document.createElement('div');
   card.className = 'card';
   card.innerHTML = `
-    <img src="${profile.img}" alt="${profile.name}">
+    <img src="${profile.img}" alt="${emptyProfileImage}">
     <h2>${profile.name}, ${profile.age} ${profile.sex}</h2>
     <p>${profile.bio}</p>`;
   stack.appendChild(card);

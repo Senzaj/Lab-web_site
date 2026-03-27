@@ -4,11 +4,13 @@ const messageInput = document.getElementById('messageInput');
 
 let currentChatName = null;
 
-function openChat(profileName) {
-  currentChatName = profileName;
+function openChat(profile) {
+  currentChatName = profile;
   chatPanel.style.display = 'flex';
-  chatHeader.innerText = profileName;
-  renderChatWindow(profileName);
+  chatHeader.innerHTML = `
+        <head>${profile.name}</head>
+        <img src=" ${profile.img}" alt="${emptyProfileImage}">`;
+  renderChatWindow(profile.name);
 }
 
 function renderChatWindow(profileName) {
@@ -47,8 +49,10 @@ function updateChatListView() {
   AppState.likedProfiles.forEach(profile => {
     const chatItem = document.createElement('div');
     chatItem.className = 'chat-item';
-    chatItem.innerText = profile.name;
-    chatItem.onclick = () => {openChat(profile.name);};
+    chatItem.innerHTML = `
+        <head>${profile.name}</head>
+        <img src=" ${profile.img}" alt="${emptyProfileImage}">`;
+    chatItem.onclick = () => {openChat(profile);};
     chatListDiv.appendChild(chatItem);
   });
 }
@@ -84,11 +88,11 @@ function addIncomingMessage(profileName, messageText) {
 }
 
 function tryGetResponse() {
-  if (Math.random() < 0.3 && currentChatName) {
+  if (Math.random() < 0.4 && currentChatName) {
     setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * responseVariants.length);
       const response = responseVariants[randomIndex];
       addIncomingMessage(currentChatName, response);
-    }, Math.random() * 1000);
+    }, Math.random() * responseDelay);
   }
 }
