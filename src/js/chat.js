@@ -4,12 +4,13 @@ const messageInput = document.getElementById('messageInput');
 
 let currentChatName = null;
 
+
 function openChat(profile) {
-  currentChatName = profile;
+  currentChatName = profile.name;
   chatPanel.style.display = 'flex';
   chatHeader.innerHTML = `
-        <head>${profile.name}</head>
-        <img src=" ${profile.img}" alt=${emptyProfileImage}>`;
+        <span>${profile.name}</span>
+        <img src="${profile.img}" alt="${emptyProfileImage}">`;
   renderChatWindow(profile.name);
 }
 
