@@ -7,7 +7,7 @@
 }
 
 body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font-style: normal; background:#f6f7fb; user-select: none;  }
-.app { display:flex; min-width: 100vh; height:100vh; }
+.app { display:flex; min-width: 100vw; height:100vh; }
 
 .sidebar {
     width:320px;
@@ -27,10 +27,8 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
     align-items:center;
 }
 .profile-actions button {
-    border:none;
     background:#eee;
     border-radius:12px;
-    padding:6px 10px;
 }
 
 .main {
@@ -96,13 +94,6 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
     bottom:10px;
     display:flex;
     justify-content:space-between;
-}
-
-.card-actions button {
-    border:none;
-    border-radius:50%;
-    width:48px;
-    height:48px;
 }
 
 .toggle {
@@ -187,8 +178,15 @@ body { margin:0; font-family: 'TT Days Sans', sans-serif; font-weight: 900; font
     max-width:70%;
     word-break:break-word;
 }
-.me { background:#ff4d79; color:white; align-self:flex-end; }
-.other { background:#eee; align-self:flex-start; }
+.me {
+    background:#ff4d79;
+    color:white;
+    align-self:flex-end;
+}
+.other {
+    background:#eee;
+    align-self:flex-start;
+}
 
 .chat-input {
     display:flex;
