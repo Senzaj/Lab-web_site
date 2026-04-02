@@ -6,7 +6,7 @@ function renderCard() {
   stack.innerHTML = '';
 
   if (currentIndex >= profiles.length) {
-    stack.innerHTML = '<div class="card">✨ Больше нет анкет ✨</div>';
+      stack.innerHTML = '<div class="empty-message">✨ Больше нет анкет ✨</div>';
     return;
   }
 
