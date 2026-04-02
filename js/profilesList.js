@@ -6,5 +6,5 @@ const profiles = [
 	{ name: "Евпатий", sex: "♂️", age: "68 лет", img: "assets/images/profiles/4.jpg", bio: "люблю грязный спорт" }];
 const emptyProfileImage = "assets/images/profiles/empty.jpg";
 
-const responseVariants = ["?", "интересно...", "ок", "👎","👍","✊","💤", "ты мне не нравишься", "стоп ✋ мне неприятно"];
+const responseVariants = ["?", "интересно...", "ок", "👎","👍","✊","💪","💤", "ты мне не нравишься", "стоп ✋ мне неприятно"];
 const responseDelay = 2400;
