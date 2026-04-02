@@ -10,7 +10,7 @@ function openChat(profile) {
   chatPanel.style.display = 'flex';
   chatHeader.innerHTML = `
         <span>${profile.name}</span>
-        <img src="${profile.img}" alt="${emptyProfileImage}">`;
+        <img src="${profile.img}">`;
   renderChatWindow(profile.name);
 }
 
@@ -52,7 +52,7 @@ function updateChatListView() {
     chatItem.className = 'chat-item';
     chatItem.innerHTML = `
         <head>${profile.name}</head>
-        <img src=" ${profile.img}" alt="${emptyProfileImage}">`;
+        <img src=" ${profile.img}">`;
     chatItem.onclick = () => {openChat(profile);};
     chatListDiv.appendChild(chatItem);
   });
@@ -67,6 +67,7 @@ function sendMessage() {
   if (!AppState.chats[currentChatName]){
     AppState.chats[currentChatName] = [];
   }
+
   AppState.chats[currentChatName].push({text, me: true});
   messageInput.value = '';
   renderChatWindow(currentChatName);

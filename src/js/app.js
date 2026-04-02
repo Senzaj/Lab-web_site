@@ -30,3 +30,17 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
+function  addLikedProfile(profile) {
+  if (AppState.likedProfiles.some(p => p.name === profile.name))
+    return;
+
+  AppState.likedProfiles.push(profile);
+  AppState.chats[profile.name] = [];
+
+  updateChatListView()
+
+  if (Math.random() < 0.5){
+    addIncomingMessage(profile.name, '🤝');
+  }
+}
+
